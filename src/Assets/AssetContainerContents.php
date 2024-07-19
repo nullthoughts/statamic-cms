@@ -231,7 +231,7 @@ class AssetContainerContents
         $files = $files->reject(function ($file, $path) {
             return Str::startsWith($path, '.meta/')
                 || Str::contains($path, '/.meta/')
-                || Str::endsWith($path, ['.DS_Store', '.gitkeep', '.gitignore']);
+                || Str::endsWith($path, ['.DS_Store', '.gitkeep', '.gitignore', '.bzEmpty']);
         });
 
         return $this->filteredFiles[$key] = $files;
